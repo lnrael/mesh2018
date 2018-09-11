@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "bc5ae6fe-df06-4997-a4c0-57d51bae3b4d",
+		"name": "ContactApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ContactController",
+			"item": [
+				{
+					"name": "GetContacts",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"SearchString\": \"\",\n\t\"Filters\": {\n\t\t\"EmailRequired\": false,\n\t\t\"ImageRequired\": false\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Contact/Search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Contact",
+								"Search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetContact",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5000/api/Contact/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Contact",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteContact",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5000/api/Contact/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Contact",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https//localhost:5000/api/Contact/test",
+							"host": [
+								"https"
+							],
+							"path": [
+								"",
+								"localhost:5000",
+								"api",
+								"Contact",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddContact",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"FirstName\": \"Jane\",\n\t\"LastName\": \"Doe\",\n\t\"phoneNumber\": \"\",\n\t\"emailAddress\": \"\",\n\t\"contactImage\": \"\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/contact",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"contact"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateContact",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 0,\n    \"firstName\": \"Jane\",\n    \"lastName\": \"Doe\",\n    \"phoneNumber\": \"\",\n    \"emailAddress\": \"\",\n    \"contactImage\": \"\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/contact",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"contact"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
