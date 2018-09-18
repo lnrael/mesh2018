@@ -3,24 +3,24 @@
 @import '~material-icons/css/material-icons.css';
 
 html {
-    height: 100vh;
-  }
-  
+  height: 100vh;
+}
+
 body {
-    height: 100vh;
-    padding: 0;
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
 app-root {
-    height: 100vh;
-    display: block;
+  height: 100vh;
+  display: block;
 }
 
 router-outlet + * {
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: column;
-    background: rgb(250,250,250);
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  background: rgb(250, 250, 250);
 }
