@@ -1,0 +1,11 @@
+.no-padding {
+  padding: 0;
+}
+
+.large-header {
+  padding: 15px 20px 15px 0px;
+}
+
+.card-title {
+  margin: 0;
+}

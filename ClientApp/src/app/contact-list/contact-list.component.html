@@ -1,0 +1,21 @@
+<!-- Add -->
+<mat-card class="no-padding">
+  <mat-card-header class="large-header" fxLayoutAlign="start center">
+    <h3 class="card-title">Contacts</h3>
+    <span fxFlex></span>
+    <button mat-icon-button color="primary">
+      <mat-icon svgIcon="person-add"></mat-icon>
+    </button>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-nav-list>
+    <mat-list-item *ngFor="let contact of contacts">
+      <img matListAvatar [src]="contact.contactImage || 'assets/account-circle.svg'">
+      <h3 matLine>{{contact.firstName}} {{contact.lastName}}</h3>
+      <span fxFlex></span>
+      <button mat-icon-button (click)="delete($event, contact.id)">
+        <mat-icon svgIcon="delete"></mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-nav-list>
+</mat-card>
