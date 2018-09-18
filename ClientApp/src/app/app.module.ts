@@ -21,14 +21,23 @@ import { ContactFilterComponent } from './contact-filter/contact-filter.componen
 import { ContactListComponent } from './contact-list/contact-list.component';
 import { ContactViewComponent } from './contact-view/contact-view.component';
 import { ContactService } from './contact.service';
+import { ContactDetailComponent } from './contact-detail/contact-detail.component';
 
 const routes: Route[] = [
   { path: '', redirectTo: 'Contacts/Search', pathMatch: 'full' },
-  { path: 'Contacts/Search', component: ContactViewComponent }
+  { path: 'Contacts/Search', component: ContactViewComponent },
+  { path: 'Contacts/Detail', component: ContactDetailComponent },
+  { path: 'Contacts/Detail/:id', component: ContactDetailComponent }
 ];
 
 @NgModule({
-  declarations: [AppComponent, ContactViewComponent, ContactListComponent, ContactFilterComponent],
+  declarations: [
+    AppComponent,
+    ContactViewComponent,
+    ContactListComponent,
+    ContactFilterComponent,
+    ContactDetailComponent
+  ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }), // Includes all basic angular directives
     HttpClientModule, // Includes angular http providers

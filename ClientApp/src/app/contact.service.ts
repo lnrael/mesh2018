@@ -30,4 +30,18 @@ export class ContactService {
   deleteContact(contactId: number): Observable<boolean> {
     return this.http.delete(this.url + contactId).pipe(map(() => true));
   }
+
+  getContact(contactId: number): Observable<Contact> {
+    return this.http
+      .get<Contact>(this.url + contactId)
+      .pipe(map(contact => (contact != null ? contact : new Contact())));
+  }
+
+  updateContact(contact: Contact): Observable<Contact> {
+    return this.http.put<Contact>(this.url, contact, this.httpOptions);
+  }
+
+  createContact(contact: Contact): Observable<Contact> {
+    return this.http.post<Contact>(this.url, contact, this.httpOptions);
+  }
 }

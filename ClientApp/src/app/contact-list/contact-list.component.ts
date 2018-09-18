@@ -12,6 +12,11 @@ export class ContactListComponent implements OnInit {
   @Output()
   deleteContact = new EventEmitter<number>();
 
+  @Output()
+  addContact = new EventEmitter<void>();
+  @Output()
+  editContact = new EventEmitter<number>();
+
   constructor() {}
 
   ngOnInit() {}
@@ -19,5 +24,13 @@ export class ContactListComponent implements OnInit {
   delete(event: Event, contactId: number) {
     event.stopPropagation();
     this.deleteContact.emit(contactId);
+  }
+
+  add() {
+    this.addContact.emit();
+  }
+
+  edit(contactId: number) {
+    this.editContact.emit(contactId);
   }
 }

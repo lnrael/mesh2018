@@ -1,0 +1,71 @@
+<div id="contact-detail-container" fxLayout="row" fxLayoutAlign="center">
+  <mat-card fxFlex.gt-md="650px">
+    <mat-card-content fxLayout="column" fxLayoutGap="50px">
+      <div fxLayoutAlign="center">
+        <img *ngIf="contact.contactImage" [src]="contact.contactImage" class="contact-image" />
+        <mat-icon *ngIf="!contact.contactImage" svgIcon="account-circle" class="contact-image"></mat-icon>
+      </div>
+      <div fxLayout="row" fxLayoutGap="50px">
+        <div fxFlex fxLayoutAlign="start center" fxLayoutGap="10px">
+          <mat-icon svgIcon="person"></mat-icon>
+          <mat-form-field fxFlex>
+            <input matInput type="text" placeholder="First Name" [(ngModel)]="contact.firstName">
+            <button *ngIf="contact.firstName" mat-button matSuffix mat-icon-button aria-label="Clear"
+                    (click)="contact.firstName=''">
+              <mat-icon svgIcon="clear"></mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+        <div fxFlex fxLayoutAlign="start center" fxLayoutGap="10px">
+          <mat-icon></mat-icon>
+          <mat-form-field fxFlex>
+            <input matInput type="text" placeholder="Last Name" [(ngModel)]="contact.lastName">
+            <button *ngIf="contact.lastName" mat-button matSuffix mat-icon-button aria-label="Clear"
+                    (click)="contact.lastName=''">
+              <mat-icon svgIcon="clear"></mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutGap="50px">
+        <div fxFlex fxLayoutAlign="start center" fxLayoutGap="10px">
+          <mat-icon svgIcon="phone"></mat-icon>
+          <mat-form-field fxFlex>
+            <input matInput type="text" placeholder="Phone" [(ngModel)]="contact.phoneNumber">
+            <button *ngIf="contact.phoneNumber" mat-button matSuffix mat-icon-button aria-label="Clear"
+                    (click)="contact.phoneNumber=''">
+              <mat-icon svgIcon="clear"></mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+        <div fxFlex fxLayoutAlign="start center" fxLayoutGap="10px">
+          <mat-icon svgIcon="email"></mat-icon>
+          <mat-form-field fxFlex>
+            <input matInput type="text" placeholder="Email" [(ngModel)]="contact.emailAddress">
+            <button *ngIf="contact.emailAddress" mat-button matSuffix mat-icon-button aria-label="Clear"
+                    (click)="contact.emailAddress=''">
+              <mat-icon svgIcon="clear"></mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="row">
+        <div fxFlex fxLayoutAlign="start center" fxLayoutGap="10px">
+          <mat-icon svgIcon="account-circle"></mat-icon>
+          <mat-form-field fxFlex>
+            <mat-label>Avatar</mat-label>
+            <input matInput type="text" placeholder="http:// or assets/" [(ngModel)]="contact.contactImage">
+            <button *ngIf="contact.contactImage" mat-button matSuffix mat-icon-button aria-label="Clear"
+                    (click)="contact.contactImage=''">
+              <mat-icon svgIcon="clear"></mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button (click)="cancel()">Cancel</button>
+      <button mat-raised-button color="primary" (click)="save()">Save</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

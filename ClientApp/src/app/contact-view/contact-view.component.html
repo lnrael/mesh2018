@@ -1,5 +1,8 @@
 <div id="contact-view-container" fxFlex fxLayout="row" fxLayoutAlign="center" fxLayoutGap="50px">
 
   <app-contact-filter (searchCriteriaChange)="searchCriteriaChanged($event)"></app-contact-filter>
-  <app-contact-list fxFlex.gt-md="800px" [contacts]="contacts$ | async" (deleteContact)="deleteContact()"></app-contact-list>
+
+  <app-contact-list fxFlex.gt-md="800px" [contacts]="contacts$ | async" (deleteContact)="deleteContact($event)"
+                    (addContact)="addContact()" (editContact)="editContact($event)">
+  </app-contact-list>
 </div>

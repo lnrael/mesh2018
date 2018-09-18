@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { Contact } from '../../models/contact';
 import { ContactService } from '../contact.service';
 import { ContactSearchCriteria } from '../../models/contactSearchCriteria';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact-view',
@@ -14,7 +15,7 @@ export class ContactViewComponent implements OnInit {
 
   private searchCriteria: ContactSearchCriteria;
 
-  constructor(private contactService: ContactService) {}
+  constructor(private contactService: ContactService, private router: Router) {}
 
   ngOnInit() {
     this.refreshContacts();
@@ -31,5 +32,12 @@ export class ContactViewComponent implements OnInit {
   searchCriteriaChanged(criteria: ContactSearchCriteria) {
     this.searchCriteria = criteria;
     this.refreshContacts();
+  }
+  addContact() {
+    this.router.navigate(['ContactDetails']);
+  }
+
+  editContact(contactId: number) {
+    this.router.navigate(['Contacts/Detail', contactId]);
   }
 }

@@ -1,0 +1,15 @@
+#contact-detail-container {
+  margin-top: 75px;
+}
+
+img.contact-image {
+  height: 84px;
+}
+
+mat-icon.contact-image {
+  fill: #3f51b5;
+  color: #3f51b5;
+  width: 84px;
+  height: 84px;
+  line-height: 84px;
+}
