@@ -1,0 +1,20 @@
+.no-padding {
+  padding: 0;
+}
+
+.large-header {
+  padding: 15px 20px 15px 0px;
+  height: 70px;
+}
+
+.card-title {
+  margin: 0;
+}
+
+.card-form-content {
+  padding: 10px;
+}
+
+.indented-list {
+  margin-left: 15px;
+}

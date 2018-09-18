@@ -1,23 +1,26 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule, Route } from '@angular/router';
-
+import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 import {
-  MatToolbarModule,
+  MatButtonModule,
   MatCardModule,
-  MatListModule,
-  MatIconModule,
+  MatCheckboxModule,
   MatDividerModule,
-  MatButtonModule
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatToolbarModule
 } from '@angular/material';
-
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Route, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { ContactFilterComponent } from './contact-filter/contact-filter.component';
+import { ContactListComponent } from './contact-list/contact-list.component';
 import { ContactViewComponent } from './contact-view/contact-view.component';
 import { ContactService } from './contact.service';
-import { ContactListComponent } from './contact-list/contact-list.component';
 
 const routes: Route[] = [
   { path: '', redirectTo: 'Contacts/Search', pathMatch: 'full' },
@@ -25,7 +28,7 @@ const routes: Route[] = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ContactViewComponent, ContactListComponent],
+  declarations: [AppComponent, ContactViewComponent, ContactListComponent, ContactFilterComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }), // Includes all basic angular directives
     HttpClientModule, // Includes angular http providers
@@ -37,7 +40,11 @@ const routes: Route[] = [
     MatListModule,
     MatIconModule,
     MatDividerModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
+    BrowserAnimationsModule
   ],
   providers: [ContactService],
   bootstrap: [AppComponent]

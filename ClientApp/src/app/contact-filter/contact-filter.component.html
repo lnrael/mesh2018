@@ -1,0 +1,29 @@
+<div fxLayout="column" fxLayoutGap="25px" id="filter-column" fxFlex="250px">
+  <mat-card class="no-padding">
+    <mat-card-header class="large-header" fxLayoutAlign="start center">
+      <h3 class="card-title">Filter</h3>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content class="card-form-content">
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+        <mat-icon svgIcon="search" fxFlex="noshrink"></mat-icon>
+        <mat-form-field fxFlex="85">
+          <input matInput type="text" placeholder="search" [(ngModel)]="searchString" (keyup)="searchStringChanged()">
+          <button *ngIf="searchString" mat-button matSuffix mat-icon-button aria-label="Clear"
+                  (click)="searchString=''">
+            <mat-icon svgIcon="clear"></mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+
+  <mat-card>
+    <mat-card-content fxLayout="column" fxLayoutGap="10px">
+      <mat-checkbox [(ngModel)]="requiredAll" [(indeterminate)]="indeterminate" (change)="changeAllFilters()">Required</mat-checkbox>
+      <mat-checkbox class="indented-list" [(ngModel)]="imageRequired" (change)="determineRequired()">Image</mat-checkbox>
+      <mat-checkbox class="indented-list" [(ngModel)]="emailRequired" (change)="determineRequired()">Email</mat-checkbox>
+    </mat-card-content>
+  </mat-card>
+</div>
